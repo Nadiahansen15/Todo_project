@@ -17,7 +17,7 @@
                   {% csrf_token %}
                   <input type="checkbox" name="checked" {% if todo.status %}checked{% endif %} >
                   <button>Update</button>
-		  <button formaction="{% url 'todo_app:delete_todo' %}">Delete</button>
+                  <button formaction="{% url 'todo_app:delete_todo' %}">Delete</button>
                   <input type="hidden" name="pk" value="{{ todo.pk }}">
                   {{ todo.text }}
                </form>
@@ -32,5 +32,6 @@
    </form>
    <hr />
    <a href="{% url 'todo_app:completed_todos' %}">Completed Todos</a>
+   <a href="{% url 'login_app:logout' %}">logout</a>
 </body>
 </html>

@@ -13,7 +13,7 @@ def index(request):
       todo.text = text
       todo.save()
 
-   todos = Todo.objects.filter(status=False)
+   todos = Todo.objects.filter(status=False, user=request.user)
    context = {
       'todos' : todos
    }

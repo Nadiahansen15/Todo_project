@@ -1,14 +1,8 @@
-<!-- file todo_project/todo_app/templates/todo_app/index.html -->
+<!-- file: todo_project/todo_app/templates/todo_app/index.html -->
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Todo</title>
-</head>
-<body>
-   <h1>Todo</h1>
+{% extends "todo_app/base.html" %}
+
+{% block content %}
    <hr />
       <ul>
       {% for todo in todos  %}
@@ -32,6 +26,5 @@
    </form>
    <hr />
    <a href="{% url 'todo_app:completed_todos' %}">Completed Todos</a>
-   <a href="{% url 'login_app:logout' %}">logout</a>
-</body>
-</html>
+
+{% endblock %}
